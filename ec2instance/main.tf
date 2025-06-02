@@ -1,0 +1,53 @@
+resource "aws_instance" "web" {
+  ami = var.os
+  instance_type = var.size
+  count = 2
+  security_groups = [ aws_security_group.TF_SG.name ]
+  
+  tags = {
+    
+    Name = var.name
+  }
+}
+
+resource "aws_security_group" "TF_SG" {
+  name        = "SG from TG"
+  description = "SG from TG"
+  vpc_id      = "vpc-02a5b47afd3487bae"
+
+#   ingress {
+#     description = "Allow SSH from your IP"
+#     from_port   = 22
+#     to_port     = 22
+#     protocol    = "tcp"
+#     cidr_blocks = ["0.0.0.0/0"]  # Replace with your IP
+#   }
+
+  ingress {
+    description = "Allow HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Allow HTTPS"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    description = "Allow all outbound"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "TF_SG"
+  }
+}
