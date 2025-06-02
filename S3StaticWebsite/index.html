@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to the Pokémon Fun Zone</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fffacd, #ffebcd);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #ff0000;
+      font-size: 3.5em;
+      animation: bounce 2s infinite;
+    }
+
+    p {
+      font-size: 1.3em;
+      color: #555;
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 250px;
+      margin-top: 30px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚡ Welcome to the Pokémon Fun Zone! ⚡</h1>
+  <p>Join Pikachu and friends in an electrifying adventure!</p>
+
+  <!-- Replace the src URL below with your actual S3 URL to pikachu.png -->
+  <img src="https://mypraticetestfromterraform2025.s3.us-east-1.amazonaws.com/pikachu.png" alt="Pikachu" />
+
+  <p>⚡ Pikachu is ready. Are you?</p>
+
+  <footer>
+    &copy; 2025 Pokémon Fan Zone. Not affiliated with Nintendo or Game Freak.
+  </footer>
+</body>
+</html>
