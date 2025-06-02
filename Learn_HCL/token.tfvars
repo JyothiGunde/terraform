@@ -1,1 +1,0 @@
-github_repo_url = "https://JyothiGunde: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@github.com/JyothiGunde/terraform.git"
