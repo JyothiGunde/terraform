@@ -6,6 +6,6 @@ variable "size" {
   default = "t2.micro"
 }
 
-variable "name" {
-  default = "HelloWorld"
-}
+# variable "name" {
+#   default = "HelloWorld"
+# }
